@@ -16,12 +16,30 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.flex-between{
+  @apply flex justify-between items-center
+}
+.flex-center{
+  @apply flex justify-center items-center
+}
+
+.wrapper {
+  @apply w-36 h-3 rounded-full bg-gray-300 relative overflow-hidden;
+}
+
+.bar {
+  @apply h-full absolute top-0 left-0 bg-gradient-to-r from-purple-800 to-purple-600;
+  animation: loading 2000ms infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -30%;
+  }
+  50% {
+    left: 80%;
+  }
+  100% {
+    left: -30%;
+  }
 }
