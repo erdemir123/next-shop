@@ -1,9 +1,10 @@
 "use client";
 import Aside from "@/components/Aside";
 import RouteMenu from "@/components/RouteMenu";
+import SmallFilter from "@/components/SmallFilter";
 import SmallSort from "@/components/SmallSort";
 import SortSelect from "@/components/SortSelect";
-import {brands,categories} from "@/pages/api/data.json" 
+import { brands, categories } from "@/pages/api/data.json";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
@@ -28,10 +29,13 @@ const page = () => {
             </div>
           )}
           {width < 768 && (
-            <div className="sort-filter">
-            <SmallSort />
-            {/* <SmallFilter brandItems={brands} categoryItems={categories} /> */}
-          </div>
+            <div className="flex flex-1 justify-between ">
+              <p className="mb-3">Collections</p>
+              <div className="sort-filter">
+                <SmallSort />
+                <SmallFilter brandItems={brands} categoryItems={categories} />
+              </div>
+            </div>
           )}
         </div>
       </div>

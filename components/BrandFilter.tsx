@@ -8,9 +8,9 @@ function BrandFilter({ items }: { items: string[] }) {
       {items
         .sort((a, b) => a.localeCompare(b))
         .map((item,index) => (
-          <div className="flex items-center gap-2" key={index} >
+          <div className="flex items-center gap-2  w-40" key={index} >
             <CheckBox item={item} type="brand" />
-            <span className="text">{item}</span>
+            <span className="">{item}</span>
           </div>
         ))}
     </div>
