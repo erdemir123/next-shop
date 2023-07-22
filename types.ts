@@ -1,3 +1,5 @@
-interface ıBrands{
+interface ıLoginUser{
+    email:string,
+    password:string
 
 }

@@ -5,9 +5,12 @@ import SmallFilter from "@/components/SmallFilter";
 import SmallSort from "@/components/SmallSort";
 import SortSelect from "@/components/SortSelect";
 import { brands, categories } from "@/pages/api/data.json";
+import { useAppSelector } from "@/toolkit/store/hooks";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
+  const {user} =useAppSelector((state)=>state.auth)
+  console.log(user)
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleWindowREsize = () => setWidth(window.innerWidth);

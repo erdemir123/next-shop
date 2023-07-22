@@ -31,6 +31,9 @@
   @apply h-full absolute top-0 left-0 bg-gradient-to-r from-purple-800 to-purple-600;
   animation: loading 2000ms infinite;
 }
+.input{
+  @apply py-2 rounded-lg  place-content-between indent-3 border-none outline-none
+}
 
 @keyframes loading {
   0% {

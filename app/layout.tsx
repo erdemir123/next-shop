@@ -2,8 +2,9 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import RouteMenu from "@/components/RouteMenu";
-import Aside from "@/components/Aside";
+import ToolkitProvider from "@/components/ToolkitProvider";
+import FirebaseProvider from "@/components/FirebaseProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` bg-white`}>
-        <div className="w-[85%] mx-auto h-[100vh] flex flex-col ">
-          <Navbar />
-          <div className="flex-1">
-            
-            {children}
+        <ToolkitProvider>
+          <FirebaseProvider>
+          <div className="w-[85%] mx-auto h-[100vh] flex flex-col ">
+            <Navbar />
+            <div className="flex-1">{children}</div>
           </div>
-        </div>
+          </FirebaseProvider>
+        </ToolkitProvider>
       </body>
     </html>
   );

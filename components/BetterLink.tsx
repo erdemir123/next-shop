@@ -1,7 +1,7 @@
 import React from "react";
 interface ıProps {
   children: React.ReactNode;
-  href: string;
+  href?: string;
 }
 const BetterLink = ({ children, href }: ıProps) => {
   return (
